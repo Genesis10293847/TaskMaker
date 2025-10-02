@@ -1,0 +1,69 @@
+<div class="container mt-4">
+	<div class="card border-0 shadow-lg rounded-4 custom-task-list">
+	  <div class="card-body p-4">
+		<h2 class="fw-bold mb-4 text-center text-dark">📋 Your Tasks</h2>
+  
+		@if (tasks().length) {
+		  <div class="d-grid gap-3">
+			@for (task of tasks(); track task.id) {
+			  <div class="task-item p-3 rounded-4 shadow-sm d-flex justify-content-between align-items-start">
+				<div class="flex-grow-1">
+				  <div class="d-flex align-items-center mb-1">
+					<input class="form-check-input me-2" type="checkbox" 
+						   [checked]="task.completed" 
+						   (change)="toggleCompleted(task.id)">
+					<span class="fw-semibold fs-6" 
+						  [class.text-decoration-line-through]="task.completed">
+					  {{ task.title }}
+					</span>
+				  </div>
+  
+				  @if (task.description) {
+					<div class="text-muted small ms-4">{{ task.description }}</div>
+				  }
+  
+				  @if (task.dueDate) {
+					<div class="text-muted small ms-4">📅 Due: {{ task.dueDate }}</div>
+				  }
+				</div>
+  
+				<button class="btn btn-sm btn-danger ms-2 px-2 py-1" 
+						(click)="removeTask(task.id)">
+				  remove
+				</button>
+			  </div>
+			}
+		  </div>
+		} @else {
+		  <div class="text-center text-muted py-4">Empty</div>
+		}
+	  </div>
+	</div>
+  </div>
+  
+  <style>
+	.custom-task-list {
+	  background: #fffbea; /* pale sticky note yellow */
+	}
+	.task-item {
+	  background: #ffffff;
+	  border-left: 6px solid #f39c12; /* accent strip */
+	  transition: 0.2s ease-in-out;
+	}
+	.task-item:hover {
+	  transform: translateY(-3px);
+	  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+	}
+	.form-check-input {
+	  transform: scale(1.2);
+	  cursor: pointer;
+	}
+	.btn-danger {
+	  background: #ff4d4d;
+	  border: none;
+	}
+	.btn-danger:hover {
+	  background: #cc0000;
+	}
+  </style>
+  

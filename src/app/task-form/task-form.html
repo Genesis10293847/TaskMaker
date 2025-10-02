@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <div class="card shadow-lg border-0 rounded-4 custom-form-card">
+    <div class="card-body p-4">
+      <h2 class="fw-bold mb-4 text-center text-dark">Make Task Here</h2>
+      <form (submit)="onSubmit($event)">
+        
+        <div class="mb-3">
+          <label for="title" class="form-label fw-semibold">Subject</label>
+          <input type="text" id="title" class="form-control rounded-pill px-3" 
+            placeholder="Example: Rescue the Cat" required 
+            [value]="title()" 
+            (input)="title.set($event.target.value)">
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label fw-semibold">Description</label>
+          <textarea id="description" class="form-control rounded-3" rows="3" 
+            placeholder="Example: The cat was last seen on a very tall pine tree..." 
+            [value]="description()" 
+            (input)="description.set($any($event.target).value)"></textarea>
+        </div>
+
+        <button type="submit" class="btn custom-btn w-100 rounded-pill fw-bold py-2">
+          Add
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+  .custom-form-card {
+    background: #fffbea; /* pale sticky-note yellow */
+    border: 2px dashed #f1c40f;
+  }
+  .form-control {
+    border: 2px solid #ddd;
+    box-shadow: none;
+    transition: border 0.2s ease-in-out, box-shadow 0.2s;
+  }
+  .form-control:focus {
+    border-color: #f39c12;
+    box-shadow: 0 0 0 0.2rem rgba(243, 156, 18, 0.25);
+  }
+  .custom-btn {
+    background: #f39c12;
+    border: none;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+  }
+  .custom-btn:hover {
+    background: #d35400;
+    transform: translateY(-2px);
+  }
+</style>
