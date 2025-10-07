@@ -4,25 +4,20 @@
 		<div class="card border-0 shadow-lg rounded-4 custom-summary">
 		  <div class="card-body text-center p-5">
 			<h2 class="fw-bold mb-4 text-dark">Summary</h2>
-  
+
 			<div class="d-flex justify-content-around mb-3">
 			  <div class="summary-box bg-primary-subtle border border-primary rounded-4 p-4 flex-fill mx-2">
 				<div class="fs-6 fw-semibold text-primary">Total</div>
 				<div class="fs-2 fw-bold text-dark">{{ totalTasks() }}</div>
 			  </div>
-  
-			  <div class="summary-box bg-success-subtle border border-success rounded-4 p-4 flex-fill mx-2">
-				<div class="fs-6 fw-semibold text-success">Completed</div>
-				<div class="fs-2 fw-bold text-dark">{{ completedTasks() }}</div>
-			  </div>
 			</div>
-  
+
 		  </div>
 		</div>
 	  </div>
 	</div>
   </div>
-  
+
   <style>
 	.custom-summary {
 	  background: #fffbea; /* pale sticky-note yellow */
@@ -31,8 +26,6 @@
 	  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
 	}
 	.summary-box:hover {
-	  transform: translateY(-4px);
 	  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 	}
   </style>
-  

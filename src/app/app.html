@@ -7,11 +7,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarID">
         <ul class="navbar-nav ms-auto d-flex gap-2">
-          <li class="nav-item">
-            <a class="nav-link px-3 py-2 rounded-pill bg-white shadow-sm text-dark fw-semibold" routerLink="/task-list">Task List</a>
+                    <li class="nav-item">
+            <a class="nav-link px-3 py-2 rounded-pill bg-white shadow-sm text-dark fw-semibold" routerLink="/task-form">Task Form</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-3 py-2 rounded-pill bg-white shadow-sm text-dark fw-semibold" routerLink="/task-form">Task Form</a>
+            <a class="nav-link px-3 py-2 rounded-pill bg-white shadow-sm text-dark fw-semibold" routerLink="/task-list">Task List</a>
           </li>
           <li class="nav-item">
             <a class="nav-link px-3 py-2 rounded-pill bg-white shadow-sm text-dark fw-semibold" routerLink="/summary">Summary</a>
@@ -20,7 +20,7 @@
       </div>
     </div>
   </nav>
-  
+
   <style>
     .custom-nav {
       backdrop-filter: blur(10px);
@@ -32,15 +32,11 @@
     .custom-toggler {
       border: none;
     }
-    .nav-link {
-      transition: 0.3s ease-in-out;
-    }
     .nav-link:hover {
       background-color: #ffc107 !important;
       color: white !important;
-      transform: translateY(-2px);
     }
   </style>
-  
-  
+
+
 <router-outlet></router-outlet>

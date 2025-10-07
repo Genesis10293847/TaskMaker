@@ -3,20 +3,20 @@
     <div class="card-body p-4">
       <h2 class="fw-bold mb-4 text-center text-dark">Make Task Here</h2>
       <form (submit)="onSubmit($event)">
-        
+
         <div class="mb-3">
           <label for="title" class="form-label fw-semibold">Subject</label>
-          <input type="text" id="title" class="form-control rounded-pill px-3" 
-            placeholder="Example: Rescue the Cat" required 
-            [value]="title()" 
+          <input type="text" id="title" class="form-control rounded-pill px-3"
+            placeholder="Example: Rescue the Cat" required
+            [value]="title()"
             (input)="title.set($event.target.value)">
         </div>
 
         <div class="mb-3">
           <label for="description" class="form-label fw-semibold">Description</label>
-          <textarea id="description" class="form-control rounded-3" rows="3" 
-            placeholder="Example: The cat was last seen on a very tall pine tree..." 
-            [value]="description()" 
+          <textarea id="description" class="form-control rounded-3" rows="3"
+            placeholder="Example: The cat was last seen on a very tall pine tree..."
+            [value]="description()"
             (input)="description.set($any($event.target).value)"></textarea>
         </div>
 
@@ -50,6 +50,5 @@
   }
   .custom-btn:hover {
     background: #d35400;
-    transform: translateY(-2px);
   }
 </style>
